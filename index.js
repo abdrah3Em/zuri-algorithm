@@ -33,44 +33,44 @@ function checkYuGiOh (n){
     myArr.push(x)
   }
 
-  //Replace 'yu', 'gi' or 'Oh'
+  //replacing 'yu', 'gi' or 'Oh'
   for(let i = 1; i < myArr.length; i++){
     
     if(myArr[i] % 2 == 0){
-      //divisible by both 2 and 3
+      //when divisible by both 2 and 3
       if(myArr[i] % 3 == 0){
-        //divisible by all
+        //when divisible by all
         if(myArr[i] % 5 == 0){
           myArr.splice(i,1, 'yu-gi-oh')
         } else {
           myArr.splice(i,1, 'yu-gi')
         }
       } 
-      //divisible by both 2 and 5
+      //when divisible by both 2 and 5
       else if (myArr[i] % 5 == 0){
         myArr.splice(i,1, 'yu-oh')
       }
-      //divisible by 2 only
+      //when divisible by 2 only
       else{
         myArr.splice(i,1, 'yu')
       }
     } 
 
     else if(myArr[i] % 3 == 0){
-      //divisible by both 3 and 5
+      //when divisible by both 3 and 5
       if (myArr[i] % 5 == 0){
         myArr.splice(i,1, 'gi-oh')
       }
-      //divisible by 3 only
+      //when divisible by 3 only
       else{
         myArr.splice(i,1, 'gi')
       }
     } 
-    //divisible by 5 only
+    //when divisible by 5 only
     else if(myArr[i] % 5 == 0){
       myArr.splice(i,1, 'oh')
     } 
-    //divisible by none
+    //when divisible by none
     else {
       continue
     }
